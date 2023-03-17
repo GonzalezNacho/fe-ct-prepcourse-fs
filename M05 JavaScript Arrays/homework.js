@@ -157,14 +157,13 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
-   let contador = 0;
-   let meses = array.map( element => {
+   let meses = [];
+   array.forEach( element => {
       if (element == "Enero"|| element == "Marzo"|| element == "Noviembre") {
-         contador++;
-         return element;
+         meses.push(element);
       }
    })
-   return contador == 3 ? meses : "No se encontraron los meses pedidos";
+   return meses.length == 3 ? meses : "No se encontraron los meses pedidos";
 }
 
 function tablaDelSeis() {
@@ -172,9 +171,11 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    let array = []
-   for (let i = 0; i <= 60; i +6) {
+   let i = 0;
+   do {
       array.push(i);
-   }
+      i += 6;
+   } while (i <= 60);
    return array;
 }
 
@@ -182,9 +183,10 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
-   let mayoresACien = array.map( element => {
+   let mayoresACien = [];
+   array.forEach( (element) => {
       if (element > 100) {
-         return element;
+         mayoresACien.push(element);
       }
    })
    return mayoresACien;
