@@ -1,2 +1,4 @@
-let numero = "98";
-console.log(numero);
+let numero = {
+    letras : ["a","e"]
+};
+console.log(numero.hasOwnProperty("email"));
